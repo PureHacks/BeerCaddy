@@ -1,10 +1,13 @@
 <section data-ng-controller="TabsController" data-ng-init="find()">
-    <ul class="tabs unstyled">
-        <li data-ng-repeat="tab in tabs">
-            <span>{{tab.created | date:'medium'}}</span> /
-            <span>{{tab.user.name}}</span>
-            <h2><a data-ng-href="#!/tabs/{{tab._id}}">{{tab.title}}</a></h2>
-            <div>{{tab.content}}</div>
-        </li>
-    </ul>
+	<ul class="tabs unstyled">
+		<li data-ng-repeat="tab in tabs">
+			<span>{{tab.firstname}}</span>
+			<span>{{tab.lastname}}</span>
+			<span>{{tab.email}}</span>
+			<span>{{tab.tab}}</span>
+			<h2><a data-ng-href="#!/tabs/{{tab._id}}">{{tab.email}}</a></h2>
+			<div>{{tab.tab}}</div>
+		</li>
+	</ul>
+	<h1 data-ng-hide="!tabs || tabs.length">No tabs found.</h1>
 </section>

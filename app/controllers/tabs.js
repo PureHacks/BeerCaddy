@@ -9,7 +9,7 @@ var mongoose = require('mongoose'),
 
 
 /**
- * Find tab by email
+ * Find tab by id
 //  */
 // exports.tab = function(req, res, next, id) {
 //     Tab.load(id, function(err, tab) {
@@ -82,11 +82,12 @@ var mongoose = require('mongoose'),
 // };
 
 /**
- * List of Tab
+ * List of Tabs
  */
 exports.all = function(req, res) {
-    Tab.find().sort('-created').exec(function(err, tabs) {
+    Tab.find().exec(function(err, tabs) {
         if (err) {
+            console.log(err);
             res.render('error', {
                 status: 500
             });
