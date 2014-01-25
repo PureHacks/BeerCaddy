@@ -1,5 +1,4 @@
 'use strict';
-'use strict';
 
 // Articles routes use articles controller
 var articles = require('../controllers/articles');

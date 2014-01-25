@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-    db: "mongodb://mongodb/mean-dev",
+    db: "mongodb://torvpc-devweb.tor.nurun.com/beercaddy",
     app: {
         name: "Beer Caddy"
     },
