@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 var express = require('express'),
-    mongoStore = require('connect-mongo')(express),
-    flash = require('connect-flash'),
+    mongoStore = require('connect-mongo')(express), // Mongo session store for express
+    flash = require('connect-flash'), // Special area to persist session information between requests
     helpers = require('view-helpers'),
     config = require('./config');
 
@@ -28,15 +28,20 @@ module.exports = function(app, passport, db) {
 
     // Only use logger for development environment
     if (process.env.NODE_ENV === 'development') {
+        // Log levels
+        // default ':remote-addr - - [:date] ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"'
+        // short ':remote-addr - :method :url HTTP/:http-version :status :res[content-length] - :response-time ms'
+        // tiny ':method :url :status :res[content-length] - :response-time ms'
+        // dev concise output colored by response status for development use
         app.use(express.logger('dev'));
     }
 
     // Set views path, template engine and default layout
     app.set('views', config.root + '/app/views');
-    app.set('view engine', 'jade');
+    app.set('view engine', 'jade'); // Use Jade Templating engine http://jade-lang.com/
 
     // Enable jsonp
-    app.enable("jsonp callback");
+    app.enable("jsonp callback"); // json with padding - workaround to allow loading of data from different domains
 
     app.configure(function() {
         // The cookieParser should be above session
@@ -57,7 +62,8 @@ module.exports = function(app, passport, db) {
         }));
 
         // Dynamic helpers
-        app.use(helpers(config.app.name));
+        // Make sure you declare this middleware after 'connect-flash' and 'express.session' middlewares and before 'express.router'
+        app.use(helpers(config.app.name)); // middleware that provides helper methods to views
 
         // Use passport session
         app.use(passport.initialize());
@@ -68,7 +74,7 @@ module.exports = function(app, passport, db) {
 
         // Routes should be at the last
         app.use(app.router);
-        
+
         // Setting the fav icon and static folder
         app.use(express.favicon());
         app.use(express.static(config.root + '/public'));
