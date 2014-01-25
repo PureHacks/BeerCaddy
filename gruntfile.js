@@ -4,6 +4,8 @@ module.exports = function(grunt) {
     // Project Configuration
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
+	// Watch for file changes 
         watch: {
             jade: {
                 files: ['app/views/**'],
@@ -31,6 +33,8 @@ module.exports = function(grunt) {
                 }
             }
         },
+
+        // Checks files for errors (JS Hint)
         jshint: {
             all: {
                 src: ['gruntfile.js', 'server.js', 'app/**/*.js', 'public/js/**', 'test/**/*.js'],
@@ -39,6 +43,8 @@ module.exports = function(grunt) {
                 }
             }
         },
+	
+	// Monitors app for changes and restarts
         nodemon: {
             dev: {
                 options: {
@@ -55,12 +61,15 @@ module.exports = function(grunt) {
                 }
             }
         },
+
         concurrent: {
             tasks: ['nodemon', 'watch'],
             options: {
                 logConcurrentOutput: true
             }
         },
+
+        // Test cases / unit testing 
         mochaTest: {
             options: {
                 reporter: 'spec',
@@ -68,11 +77,15 @@ module.exports = function(grunt) {
             },
             src: ['test/mocha/**/*.js']
         },
+
         env: {
             test: {
                 NODE_ENV: 'test'
             }
         },
+
+        // Simulates tests through real browsers
+        // Supports Mocha, Jasmine QUnit
         karma: {
             unit: {
                 configFile: 'test/karma/karma.conf.js'
