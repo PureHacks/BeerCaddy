@@ -38,7 +38,7 @@ module.exports = function(app, passport, db) {
 
     // Set views path, template engine and default layout
     app.set('views', config.root + '/app/views');
-    app.set('view engine', 'jade'); // Use Jade Templating engine http://jade-lang.com/
+    app.set('view engine', 'jade');
 
     // Enable jsonp
     app.enable("jsonp callback"); // json with padding - workaround to allow loading of data from different domains

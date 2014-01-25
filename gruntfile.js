@@ -5,9 +5,15 @@ module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
-	// Watch for file changes 
+    // Watch for file changes 
         watch: {
             jade: {
+                files: ['app/views/**'],
+                options: {
+                    livereload: true,
+                },
+            },
+            ejs: {
                 files: ['app/views/**'],
                 options: {
                     livereload: true,
@@ -43,8 +49,8 @@ module.exports = function(grunt) {
                 }
             }
         },
-	
-	// Monitors app for changes and restarts
+    
+    // Monitors app for changes and restarts
         nodemon: {
             dev: {
                 options: {
