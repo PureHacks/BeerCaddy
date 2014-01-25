@@ -4,7 +4,7 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-    Tabs = mongoose.model('Tabs'),
+    Tab = mongoose.model('Tab'),
     _ = require('lodash');
 
 
@@ -12,7 +12,7 @@ var mongoose = require('mongoose'),
  * Find tab by email
  */
 exports.tab = function(req, res, next, id) {
-    Tabs.load(id, function(err, tab) {
+    Tab.load(id, function(err, tab) {
         if (err) return next(err);
         if (!tab) return next(new Error('Failed to load tab ' + id));
         req.tab = tab;
@@ -24,7 +24,7 @@ exports.tab = function(req, res, next, id) {
  * Create a tab
  */
 exports.create = function(req, res) {
-    var tab = new Tabs(req.body);
+    var tab = new Tab(req.body);
     tab.email = req.email;
 
     tab.save(function(err) {
@@ -82,11 +82,12 @@ exports.show = function(req, res) {
 };
 
 /**
- * List of Tabs
+ * List of Tab
  */
 exports.all = function(req, res) {
-    Tabs.find().sort('-created').populate('tab', 'tab firstname lastname email').exec(function(err, tabs) {
+    Tab.find().sort('-created').populate('tab', 'tab firstname lastname email').exec(function(err, tabs) {
         if (err) {
+            console.log(err);
             res.render('error', {
                 status: 500
             });

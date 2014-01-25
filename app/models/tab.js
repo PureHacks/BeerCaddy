@@ -41,10 +41,26 @@ var TabsSchema = new Schema({
 /**
  * Statics
  */
-TabsSchema.statics.load = function(id, cb) {
-    this.findOne({
-        _id: id
-    }).populate('tab', 'tab firstname lastname email').exec(cb);
-};
+// TabsSchema.statics.load = function(id, cb) {
+//     this.findOne({
+//         _id: id
+//     }).exec(cb);
+//     //  this.findOne({
+//     //     _id: id
+//     // }).populate('tab', 'tab firstname lastname email').exec(cb);
+// };
 
-mongoose.model('Tabs', TabsSchema);
+
+mongoose.model('Tab', TabsSchema);
+
+
+// /**
+//  * Statics
+//  */
+// ArticleSchema.statics.load = function(id, cb) {
+//     this.findOne({
+//         _id: id
+//     }).populate('user', 'name username').exec(cb);
+// };
+
+// mongoose.model('Article', ArticleSchema);
