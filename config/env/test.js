@@ -1,10 +1,10 @@
 'use strict';
 
 module.exports = {
-    db: "mongodb://localhost/mean-test",
+    db: "mongodb://torvpc-devweb.tor.nurun.com/beercaddy-test",
     port: 3001,
     app: {
-        name: "MEAN - A Modern Stack - Test"
+        name: "Beer Caddy - Test"
     },
     facebook: {
         clientID: "APP_ID",

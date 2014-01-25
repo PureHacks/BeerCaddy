@@ -1,9 +1,9 @@
 'use strict';
 
 module.exports = {
-    db: "mongodb://torvpc-devweb.tor.nurun.com/beercaddy",
+    db: "mongodb://torvpc-devweb.tor.nurun.com/beercaddy-dev",
     app: {
-        name: "Beer Caddy"
+        name: "Beer Caddy - Cheers! - Development"
     },
     facebook: {
         clientID: "APP_ID",
