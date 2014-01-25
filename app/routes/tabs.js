@@ -13,13 +13,13 @@ var authorization = require('./middlewares/authorization');
 // };
 
 module.exports = function(app) {
-
+	//TODO: rename to tapmaster
     app.get('/tabs', tabs.all);
     app.post('/tabs', authorization.requiresLogin, tabs.create);
     app.get('/tabs/:tabId', tabs.show);
   //  app.put('/tabs/:tabId', authorization.requiresLogin, hasAuthorization, tabs.update);
 
     // Finish with setting up the tabId param
-    app.param('tabId', tabs.article);
+    app.param('tabId', tabs.tab);
 
 };
