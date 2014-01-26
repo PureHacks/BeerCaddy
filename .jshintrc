@@ -16,7 +16,7 @@
     "unused": true, // Warn unused variables.
     "strict": true, // Require `use strict` pragma in every file.
     "trailing": true, // Prohibit trailing whitespaces.
-    "smarttabs": false, // Suppresses warnings about mixed tabs and spaces
+    "smarttabs": true, // Suppresses warnings about mixed tabs and spaces
     "globals": { // Globals variables.
         "angular": true
     },

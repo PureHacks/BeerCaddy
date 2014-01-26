@@ -4,8 +4,8 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-    Tab = mongoose.model('Tab'),
-    _ = require('lodash');
+    Tab = mongoose.model('Tab');
+    //,_ = require('lodash');
 
 
 /**

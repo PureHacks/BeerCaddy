@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'DIN Next LT Pro Light';
+  src: url("/font/dinnextltpro-light-webfont.eot");
+  src: url("/font/dinnextltpro-light-webfont.eot?#iefix") format("embedded-opentype"), url("/font/dinnextltpro-light-webfont.woff") format("woff"), url("/font/dinnextltpro-light-webfont.ttf") format("truetype"), url("/font/dinnextltpro-light-webfont.svg#DINNextLTProLight") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'DIN Next LT Pro Std';
+  src: url("/font/dinnextltpro-regular-webfont.eot");
+  src: url("/font/dinnextltpro-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/font/dinnextltpro-regular-webfont.woff") format("woff"), url("/font/dinnextltpro-regular-webfont.ttf") format("truetype"), url("/font/dinnextltpro-regular-webfont.svg#DINNextLTProStd") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+
+@font-face {
+  font-family: 'Plantin MT Std';
+  src: url("/font/plantinmtstd-regular-webfont.eot");
+  src: url("/font/plantinmtstd-regular-webfont.eot?#iefix") format("embedded-opentype"), url("/font/plantinmtstd-regular-webfont.woff") format("woff"), url("/font/plantinmtstd-regular-webfont.ttf") format("truetype"), url("/font/plantinmtstd-regular-webfont.svg#PlantinMTStd") format("svg");
+  font-weight: normal;
+  font-style: normal; }
