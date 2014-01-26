@@ -7,6 +7,10 @@
     width:100%
 }
 
+.content .row {
+    margin-bottom: 1em;
+}
+
 footer {
     position:fixed;
     left:0px;

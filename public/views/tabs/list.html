@@ -1,11 +1,29 @@
-<section data-ng-controller="TabsController" data-ng-init="find()">
+<section class="col-xs-12" data-ng-controller="TabsController" data-ng-init="find()">
+    <div class="row">
+        <div class="btn-group col-xs-12" data-toggle="buttons">
+            <button type="button" class="btn btn-primary btn-lg col-xs-3" ng-model="selectedFilterName" btn-radio="'all'">All</button>
+            <button type="button" class="btn btn-primary btn-lg col-xs-3" ng-model="selectedFilterName" disabled btn-radio="'eighthFloor'">8<sup>th</sup> Floor</button>
+            <button type="button" class="btn btn-primary btn-lg col-xs-3" ng-model="selectedFilterName" disabled btn-radio="'ninthFloor'">9<sup>th</sup> Floor</button>
+            <button type="button" class="btn btn-primary btn-lg col-xs-3" ng-model="selectedFilterName" btn-radio="'getBeer'">Gets Beers</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-9 col-md-4" >
+            <input class="form-control" name="searchFilter" data-ng-model="searchFilter" placeholder="SEARCH NAME" />
+            
+        </div>
+        <div class="col-xs-1" >
+            <h4 class="glyphicon glyphicon-search"></h4>
+        </div>
+    </div>
 	<ul class="tabs row">
-		<li data-ng-repeat="tab in tabs">
+		<li data-ng-repeat="tab in tabs| filter:activeFilter | filter:searchFilter">
 			<span class="name col-xs-9 col-md-4">{{tab.firstname}} {{tab.lastname}}</span>
 			<span class="tab-size right  col-xs-3 col-md-2">
-                <button data-ng-click="tabMinusOne(tab);">-</button>
-                <span>{{tab.tab}}</span>
-                <button data-ng-click="tabPlusOne(tab);">+</button>
+                <button data-ng-click="tabMinusOne(tab);" class="btn">&ndash;</button>
+                <span class="tabCount">{{tab.tab}}</span>
+                <button data-ng-click="tabPlusOne(tab);" class="btn">+</button>
             </span>
 			<!-- <h2><a data-ng-href="#!/tabs/{{tab._id}}">{{tab.email}}</a></h2> -->
 		</li>

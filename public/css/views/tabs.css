@@ -1,6 +1,13 @@
-ul.tabs { padding:0; }
-ul.tabs li {
-    list-style: none;
+ul.tabs { padding:0; list-style: none;}
+
+ul.tabs li {}
+
+ul.tabs li .name {
+    line-height:2em;
+    padding-bottom: 0.5em;
+}
+ul.tabs li .tabCount {
+    display: inline-block; width: 2em; text-align: center; font-weight: bold;
 }
 ul.tabs li:not(:last-child) {
 }
