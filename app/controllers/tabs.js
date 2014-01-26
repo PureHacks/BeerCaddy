@@ -4,21 +4,21 @@
  * Module dependencies.
  */
 var mongoose = require('mongoose'),
-    Tab = mongoose.model('Tab');
-    //,_ = require('lodash');
+    Tab = mongoose.model('Tab'),
+    _ = require('lodash');
 
 
 /**
  * Find tab by id
-//  */
-// exports.tab = function(req, res, next, id) {
-//     Tab.load(id, function(err, tab) {
-//         if (err) return next(err);
-//         if (!tab) return next(new Error('Failed to load tab ' + id));
-//         req.tab = tab;
-//         next();
-//     });
-// };
+ */
+exports.tab = function(req, res, next, id) {
+    Tab.load(id, function(err, tab) {
+        if (err) return next(err);
+        if (!tab) return next(new Error('Failed to load tab ' + id));
+        req.tab = tab;
+        next();
+    });
+};
 
 // /**
 //  * Create a tab
@@ -38,24 +38,26 @@ var mongoose = require('mongoose'),
 //     });
 // };
 
-// /**
-//  * Update a tab
-//  */
-// exports.update = function(req, res) {
-//     var tab = req.tab;
+/**
+ * Update a tab
+ */
+exports.update = function(req, res) {
+    var tab = req.tab;
 
-//     tab = _.extend(tab, req.body);
+    tab = _.extend(tab, req.body);
 
-//     tab.save(function(err) {
-//         if (err) {
-//             res.render('error', {
-//                 status: 500
-//             });
-//         } else {
-//             res.jsonp(tab);
-//         }
-//     });
-// };
+    console.log(tab);
+
+    tab.save(function(err) {
+        if (err) {
+            res.render('error', {
+                status: 500
+            });
+        } else {
+            res.jsonp(tab);
+        }
+    });
+};
 
 // /**
 //  * Delete a tab
@@ -74,12 +76,12 @@ var mongoose = require('mongoose'),
 //     });
 // };
 
-// /**
-//  * Show a tab
-//  */
-// exports.show = function(req, res) {
-//     res.jsonp(req.tab);
-// };
+/**
+ * Show a tab
+ */
+exports.show = function(req, res) {
+    res.jsonp(req.tab);
+};
 
 /**
  * List of Tabs

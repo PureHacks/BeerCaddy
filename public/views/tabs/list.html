@@ -1,12 +1,13 @@
 <section data-ng-controller="TabsController" data-ng-init="find()">
-	<ul class="tabs unstyled">
+	<ul class="tabs row">
 		<li data-ng-repeat="tab in tabs">
-			<span>{{tab.firstname}}</span>
-			<span>{{tab.lastname}}</span>
-			<span>{{tab.email}}</span>
-			<span>{{tab.tab}}</span>
-			<h2><a data-ng-href="#!/tabs/{{tab._id}}">{{tab.email}}</a></h2>
-			<div>{{tab.tab}}</div>
+			<span class="name col-xs-9 col-md-4">{{tab.firstname}} {{tab.lastname}}</span>
+			<span class="tab-size right  col-xs-3 col-md-2">
+                <button data-ng-click="tabMinusOne(tab);">-</button>
+                <span>{{tab.tab}}</span>
+                <button data-ng-click="tabPlusOne(tab);">+</button>
+            </span>
+			<!-- <h2><a data-ng-href="#!/tabs/{{tab._id}}">{{tab.email}}</a></h2> -->
 		</li>
 	</ul>
 	<h1 data-ng-hide="!tabs || tabs.length">No tabs found.</h1>

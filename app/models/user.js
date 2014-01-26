@@ -17,6 +17,10 @@ var UserSchema = new Schema({
         type: String,
         unique: true
     },
+    isAdmin: {
+        type: Boolean,
+        default: false
+    },
     hashed_password: String,
     provider: String,
     salt: String,

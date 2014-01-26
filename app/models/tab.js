@@ -33,23 +33,14 @@ var TabSchema = new Schema({
     }
 });
 
-/**
- * Validations
- */
-
 
 /**
  * Statics
-
+*/
 TabSchema.statics.load = function(id, cb) {
     this.findOne({
         _id: id
     }).exec(cb);
-    this.findOne({
-        _id: id
-    }).populate('tab', 'tab firstname lastname email').exec(cb);
 };
- */
-
 
 mongoose.model('Tab', TabSchema);
