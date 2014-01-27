@@ -10,6 +10,7 @@ angular.module('mean.tabs').controller('TabsController', ['$scope', '$routeParam
             //todo: implement floor
             case "eighthFloor" : return tab.floor == 8;
             case "ninthFloor" : return tab.floor == 9;
+            case "owsBeer" : return tab.tab < 0;
             case "getBeer" : return tab.tab > 0;
             default : return true;
         }
