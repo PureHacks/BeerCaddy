@@ -4,7 +4,10 @@ angular.module('mean.system').controller('HeaderController', ['$scope', 'Global'
     $scope.global = Global;
 
     $scope.menu = [{
-        'title': 'Tabmaster',
+        'title': 'Public List',
+        'link': ''
+    },{
+        'title': 'Tab Master',
         'link': 'tabs'
     }];
     
