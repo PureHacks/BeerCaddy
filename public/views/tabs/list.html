@@ -21,13 +21,12 @@
 	<ul class="tabs row">
 		<li data-ng-repeat="tab in tabs| filter:activeFilter | filter:searchFilter">
 			<span class="name col-xs-9 col-md-4">{{tab.firstname}} {{tab.lastname}}</span>
-			<span class="tab-size right  col-xs-3 col-md-2">
+			<span class="tab-size right  col-xs-3 col-md-2 text-right">
                 <button data-ng-click="tabMinusOne(tab);" class="btn">&ndash;</button>
                 <span class="tabCount">{{tab.tab}}</span>
                 <button data-ng-click="tabPlusOne(tab);" class="btn">+</button>
             </span>
-			<!-- <h2><a data-ng-href="#!/tabs/{{tab._id}}">{{tab.email}}</a></h2> -->
 		</li>
 	</ul>
-	<h1 data-ng-hide="!tabs || tabs.length">No tabs found.</h1>
+	<h1 data-ng-hide="!tabs || tabs.length">No open taps.</h1>
 </section>

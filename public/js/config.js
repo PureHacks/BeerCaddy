@@ -20,7 +20,7 @@ angular.module('mean').config(['$routeProvider',
             templateUrl: 'views/tabs/list.html'
         }).
         when('/', {
-            templateUrl: 'views/index.html'
+            templateUrl: 'views/tabs/list-static.html'
         }).
         otherwise({
             redirectTo: '/'

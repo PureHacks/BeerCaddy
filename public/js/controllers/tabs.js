@@ -5,29 +5,25 @@ angular.module('mean.tabs').controller('TabsController', ['$scope', '$routeParam
 
     $scope.tabs = [];
     $scope.searchFilter = '';
+    $scope.selectedFilterName = 'all';
+
     $scope.activeFilter = function(tab){
         switch($scope.selectedFilterName){
             //todo: implement floor
-            case "eighthFloor" : return tab.floor == 8;
-            case "ninthFloor" : return tab.floor == 9;
-            case "owsBeer" : return tab.tab < 0;
-            case "getBeer" : return tab.tab > 0;
-            default : return true;
+            case 'eighthFloor' :
+                return tab.floor === 8;
+            case 'ninthFloor' :
+                return tab.floor === 9;
+            case 'owsBeer' :
+                return tab.tab < 0;
+            case 'getBeer' :
+                return tab.tab > 0;
+            default :
+                return true;
         }
     };
 
-    $scope.selectedFilterName = "all";
-
-    // $scope.showGetsBeers = function(tab){
-    //      $scope.activeFilters = $scope.getsBeersFilter;
-    // };
-
-    // $scope.getsBeersFilter = function(tab){
-    //     return tab.tab > 0;
-    // };  
-
     $scope.tabPlusOne = function(tab) {
-       // var tab = $scope.tab;
         tab.tab++;
 
         if (!tab.updated) {

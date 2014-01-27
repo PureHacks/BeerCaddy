@@ -3,6 +3,10 @@
     margin-left:0
 }
 
+.navbar-brand:before {
+    content: ""; float: left; width:24px; height: 35px; margin: -10px 0.5em -5px 0;  background: url('/img/logo-nav.png') 0 0 no-repeat;
+}
+
 .content {
     width:100%
 }
